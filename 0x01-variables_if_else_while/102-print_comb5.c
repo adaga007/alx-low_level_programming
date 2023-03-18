@@ -15,13 +15,17 @@ for (j = 0; j <= 8; j++)
 {
 for (k = 0; k <= 9; k++)
 {
-for (l = 1; l <= 9; l++)
+for (l = 0; l <= 9; l++)
 {
 if (i == k && j == l)
 {
 continue;
 }
 if (i == l && j == k)
+{
+continue;
+}
+if (i == j && i == k && i == l)
 {
 continue;
 }
