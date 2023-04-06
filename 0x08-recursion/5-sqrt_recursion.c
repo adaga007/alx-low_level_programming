@@ -1,0 +1,38 @@
+#include "main.h"
+
+/**
+ * spotter - a function that Finds the square root of two numbers
+ *
+ * @a: number
+ * @b: The number to test for the square root of a
+ *
+ * Return: square root
+ */
+
+int spotter(int a, int b)
+{
+	if (b * b > a)
+		return (-1);
+
+	else if (b * b == a)
+		return (b);
+
+	else
+		return (spotter(a, b + 1));
+
+	return (1);
+}
+
+/**
+ * _sqrt_recursion - a function that returns the natural
+ * square root of a number
+ * @n: the number to return the square root of
+ * Return: square root
+ */
+
+int _sqrt_recursion(int n)
+{
+	if (n == 0)
+		return (0);
+	return (spotter(n, 1));
+}
