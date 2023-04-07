@@ -25,7 +25,7 @@ int checker(int i, char *s)
 {
 	if (*s)
 	{
-		if (*s != s[length(s) - i])
+		if (*s != s[getLength(s) - i])
 		{
 			return (0);
 		}
