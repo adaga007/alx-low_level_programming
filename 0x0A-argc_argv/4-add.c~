@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+/**
+ * main -  a program that adds positive numbers.
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0
+ */
+int main(int argc, char *argv[])
+{
+if (argc - 1 == 0)
+{
+printf("%d\n", 0);
+return (1);
+}
+printf("isdigit %d\n", isdigit('t'));
+return (0);
+}
