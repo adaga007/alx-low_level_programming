@@ -9,6 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-(void) argv;
+UNUSED (argv);
 printf("%d\n", argc);
 }
