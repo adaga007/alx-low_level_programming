@@ -1,56 +1,63 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-/**
- * checker - checking for string
- * @s: string
- * Return: boolean
- */
-int checker(char *s)
-{
-	int i = 0;
+#include <string.h>
 
-	for (; s[i] != '\0'; i++)
-	{
-		if (!isdigit(s[i]))
-		{
-			return (0);
-		}
-	}
-	return (1);
-}
 /**
- * main -  a program that adds positive numbers.
- * @argc: argument counter
+ * checker - check for strings
+ * @str: strin
+ * Return: 0
+ */
+
+int checker(char *str)
+{
+unsigned int i;
+
+i = 0;
+while (i < strlen(str))
+{
+if (!isdigit(str[i]))
+{
+return (0);
+}
+i++;
+}
+return (1);
+}
+
+/**
+ * main - a program that adds positive numbers.
+ * @argc: argument count
  * @argv: argument vector
  * Return: 0
  */
-int main(int argc, char  *argv[])
+
+int main(int argc, char *argv[])
+
 {
+
 	int i;
-	int total = 0;
+	int sum = 0;
 
-	if (argc > 1)
+	i = 1;
+	while (i < argc)
 	{
-		for (i = 1; i < argc; i++)
+		if (checker(argv[i]))
+
 		{
-			if (checker(argv[i]))
-			{
-				total += atoi(argv[i]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			sum += atoi(argv[i]);
 		}
-		printf("%d\n", total);
-		return (0);
-	}
-	else
-	{
-		printf("%d\n", 0);
-		return (1);
+
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+
+		i++;
 	}
 
+	printf("%d\n", sum);
+
+	return (0);
 }
