@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * newFunc - helps strtow function
- * @word: count
- * @ln: length
+ * helper - helps function
+ * @word: wordcount
+ * @len: length
  * @str: string to go through
- * @s: array
+ * @s: array you are assigning
  * Return: char value
  */
-char **newFunc(int word, int ln, char *str, char **s)
+char **helper(int word, int len, char *str, char **s)
 {
 	int i, k, j;
 
@@ -17,7 +17,7 @@ char **newFunc(int word, int ln, char *str, char **s)
 	for (i = 0; i < word; i++)
 	{
 		k = 0;
-		for (; j < ln; j++)
+		for (; j < len; j++)
 		{
 			if (str[0] != ' ' || str[j] != ' ')
 			{
@@ -36,26 +36,26 @@ char **newFunc(int word, int ln, char *str, char **s)
 	return (s);
 }
 /**
- * strtow - a function that splits a string into words.
- * @str: string
- * Return: char value
+ * strtow - string to words
+ * @str: string to check
+ * Return: return char value
  */
 char **strtow(char *str)
 {
-int i, j, size, k, ln, word;
+	int len, i, j, size, k, word;
 	char **s;
 
 	if (str == NULL)
 		return (NULL);
-	ln = 0;
+	len = 0;
 	word = 0;
-	while (str[ln] != '\0')
+	while (str[len] != '\0')
 	{
 		if (str[0] != ' ')
 		word++;
-		if (str[ln] != ' ' && str[ln - 1] == ' ' && ln != 0)
+		if (str[len] != ' ' && str[len - 1] == ' ' && len != 0)
 			word++;
-		ln++;
+		len++;
 	}
 	s = (char **)malloc(sizeof(char *) * word + 1);
 	if (s == NULL)
@@ -64,7 +64,7 @@ int i, j, size, k, ln, word;
 	for (i = 0; i < word; i++)
 	{
 		size = 0;
-		for (; j < ln; j++)
+		for (; j < len; j++)
 		{
 			if (str[0] != ' ' || str[j] != ' ')
 				size++;
@@ -80,6 +80,6 @@ int i, j, size, k, ln, word;
 			free(s);
 		}
 	}
-	s = newFunc(word, ln, str, s);
+	s = helper(word, len, str, s);
 	return (s);
 }
