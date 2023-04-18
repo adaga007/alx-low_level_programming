@@ -1,0 +1,64 @@
+#include "dog.h"
+#include <stdlib.h>
+/**
+ * _strlen - function that gives the length of a string
+ * @s: string
+ * Return: length
+ */
+int _strlen(char *s)
+{
+	int len;
+
+	len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+
+	return (len);
+}
+
+/**
+ * new_dog - a function that creates new dog
+ * @name: dog name
+ * @age: dog age
+ * @owner: dog woner
+ * Return: dog object
+ */
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	int i, len1, len2;
+	dog_t *ndog;
+	char *newName, *newOwner;
+
+	len1 = _strlen(name);
+	len2 = _strlen(owner);
+	
+	ndog = malloc(sizeof(dog_t));
+	if (ndog == NULL)
+		return (NULL);
+	newName = malloc((len1 + 1) * sizeof(char));
+	if (newName == NULL)
+	{
+		free(ndog);
+		return (NULL);
+	}
+	for (i = 0; i < len1; i++)
+		newName[i] = name[i];
+	newName[i] = '\0';
+	ndog->name = newName;
+	ndog->age = age;
+	newOwner = malloc((len2 + 1) * sizeof(char));
+	if (newOwner == NULL)
+	{
+		free(newName);
+		free(ndog);
+		return (NULL);
+	}
+	for (i = 0; i < len2; i++)
+		newOwner[i] = owner[i];
+	newOwner[i] = '\0';
+	ndog->owner = newOwner;
+	return (ndog);
+}
