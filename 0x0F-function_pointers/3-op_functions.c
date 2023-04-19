@@ -1,52 +1,62 @@
-#include <stdlib.h>
 #include "3-calc.h"
+
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+
+
 /**
- * op_add - function to add tow int numbers
- * @a: first number
- * @b: second number
- * Return: sum
+ * op_add - Returns the sum of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ * Return: The sum of a and b.
  */
 int op_add(int a, int b)
 {
 	return (a + b);
 }
 /**
- * op_sub - function to get difference of two int numbers
- * @a: first number
- * @b: second number
- * Return: difference
+ * op_sub - Returns the difference of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The difference of a and b.
  */
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
 /**
- * op_mul - function to multiply two in numbers
- * @a: first number
- * @b: second number
- * Return: multipliy
+ * op_mul - Returns the product of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The product of a and b.
  */
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
 /**
- * op_div - function to divide two numbers
- * @a: first number
- * @b: second number
- * Return: division
+ * op_div - Returns the division of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The quotient of a and b.
  */
 int op_div(int a, int b)
 {
 	return (a / b);
 }
 /**
- * op_mod - function to find modulos of two numbers
- * @a: first number
- * @b: second number
- * Return: modulo of ints
+ * op_mod - Returns the remainder of the division of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The remainder of the division of a by b.
  */
-
 int op_mod(int a, int b)
 {
 	return (a % b);
