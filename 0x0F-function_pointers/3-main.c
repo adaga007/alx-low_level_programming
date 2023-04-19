@@ -9,23 +9,27 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc == 4)
-	{
-		int a;
-		int b;
-		int (*func_ptr)(int, int);
 
-		a = atoi(argv[1]);
-		b = atoi(argv[3]);
-		func_ptr = get_op_func(argv[2]);
-		if ((*argv[2] == '%' || *argv[2] == '/') && b == 0)
-		{
-			printf("Error\n");
-			exit(100);
-		}
-		printf("%d\n", func_ptr(a, b));
-		return (0);
+	int a, b, c;
+	int (*p)(int, int);
+
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
 	}
-	printf("Error\n");
-	exit(98);
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	p = get_op_func(argv[2]);
+	if (p == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	c = (*p)(a, b);
+
+	printf("%d\n", c);
+	return (0);
 }
