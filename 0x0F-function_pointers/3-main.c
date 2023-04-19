@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
-#include "3-get_op_func.c"
 /**
  * main -  a program that performs simple operations.
  * @argc: arguments
