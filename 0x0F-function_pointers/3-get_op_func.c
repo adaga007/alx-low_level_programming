@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
+#include "3-op_functions.c"
 /**
  * get_op_func - determines which func to return
  * @s: function
