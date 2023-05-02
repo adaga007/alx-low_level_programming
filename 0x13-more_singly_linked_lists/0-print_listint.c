@@ -1,7 +1,9 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * print_listint - prints integers in list
- * @h: struct listint_t type
+ * print_listint - a function that prints all the elements of a listint_t list.
+ * @h: struct
  * Return: size_t value
  */
 size_t print_listint(const listint_t *h)
