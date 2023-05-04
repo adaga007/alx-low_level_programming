@@ -14,7 +14,7 @@ unsigned int binary_to_uint(const char *b)
 	while (*b)
 	{
 		if (*b == '1')
-			convertedInt = (x << 1) | 1;
+			convertedInt = (convertedInt << 1) | 1;
 		else if (*b == '0')
 			convertedInt <<= 1;
 		else
