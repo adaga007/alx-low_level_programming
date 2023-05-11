@@ -8,7 +8,7 @@
  */
 int main(int ac, char *av[])
 {
-	int fsrc, ftdest, rd, clf, clt;
+	int fsrc, fdest, rd, clf, clt;
 	char buffer[BUFSIZ];
 
 	if (argc != 3)
