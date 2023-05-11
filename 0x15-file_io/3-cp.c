@@ -9,7 +9,7 @@
 int main(int ac, char *av[])
 {
 	int fsrc, fdest, rd, clf, clt;
-	char buffer[BUFSIZ];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -23,7 +23,7 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 	fdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	while ((rd = read(fsrc, buffer, BUFSIZ)) > 0)
+	while ((rd = read(fsrc, buffer, 1024)) > 0)
 		if (fdest == -1 || (write(fdest, buffer, rd) != rd))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
